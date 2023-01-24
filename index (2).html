@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Watch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <
+<style>
+	body{
+		background-color:#8854d0;
+	}
+	span{
+		font-size: 32px;
+		font-family: Impact;
+	}
+	h2{
+		color: #f368e0;
+	}
+	h4{
+		color: #222f3e;
+	}
+    #Watch{
+    	width:300px;
+    	text-align: center;
+    	margin:auto;
+    	margin-top: 200px;
+    	background:#8854d0;
+    	color: white;
+    	box-shadow: 1px 0.1px 0.1px 2px  ;
+    	padding: 30px;
+    	border-radius: 50%;
+    	transition:1.2s;
+    }
+    #Watch:hover{
+    	box-shadow: 7px 5px 5px 17px  ;
+    	color: green;
+    	background: white;
+    }
+</style>
+<body onload="showTime()">
+  <div class="col-md-6 px-3">
+  	<h2>Digital Watch</h2>
+	<div id="Watch">
+		<h2>Digital Watch</h2>
+	   <span></span>
+	   <h4>Shakhor DAS</h4>
+	</div>
+   </div>
+	<script type="text/javascript">
+		function showTime(){
+			var d = new Date();
+			    h = d.getHours();
+			    m = d.getMinutes();
+			    s = d.getSeconds();
+		   season = "AM" ;
+
+                if(h > 12){
+                	season = "PM" ;
+                }
+                if (h >= 12) {
+                	h = h -12 ;
+                }
+			    h = h < 10 ? "0"+h : h ;
+			    m = m < 10 ? "0"+m : m ;
+			    s = s < 10 ? "0"+s : s ;
+
+			 time = h + ":"+m+":"+s+ " " +season;
+		     setTimeout(showTime,1000);
+			 document.getElementsByTagName("span")[0].innerText = time;
+		}
+	</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
